@@ -87,19 +87,29 @@ export default function Home() {
   const generateBilanganPrima2 = () => {
     if(validation()) {
         let result = "";
-        let pembagi = 0;
         for(var i = 1; i <= numberValue; i++) {
-           if(numberValue % i == 0) {
-             pembagi++;
-           
+           if(checkPrima(i)) {
+              result += i+"<br/>";
            }
          
         }
        
-        if(pembagi == 2) {
-          result += pembagi+"<br/>";
-        } 
+       
         setResult(result);
+    }
+  }
+
+  const checkPrima = (number) => {
+    let divide = 0;
+    for(let i=1; i <= number; i++){
+      if(number%i == 0){
+        divide++
+      }
+    }
+    if(divide == 2){
+      return true
+    }else{
+      return false;
     }
   }
 
