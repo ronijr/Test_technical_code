@@ -109,6 +109,7 @@ export default function Home() {
     if(divide == 2){
       return true
     }else{
+      
       return false;
     }
   }
